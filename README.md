@@ -4,6 +4,8 @@ Dashboard interactivo del **Producto Interno Bruto trimestral de México**
 (INEGI, Sistema de Cuentas Nacionales, año base 2018), construido con
 Streamlit, Plotly, pandas, Matplotlib y Seaborn.
 
+**▶ App en línea:** <https://dashboardpib-ejwfmwktxnex4up2d2epgq.streamlit.app/>
+
 ## Instalación
 
 Desde la raíz del repositorio:
