@@ -1,0 +1,23 @@
+# Sistema
+.DS_Store
+
+# Entornos virtuales y cachés de herramientas
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.log
+
+# Datos generados por el tablero (se reconstruyen con build_data.py)
+dashboard_pib/data/
+
+# Archivo comprimido redundante: la fuente vive en tabulados_PIBT/
+/tabulados_PIBT.zip
+
+# Notas locales de sesión (no forman parte del proyecto)
+/sesions.md
+
+# Configuración local de herramientas
+.claude/settings.local.json
+.streamlit/secrets.toml
