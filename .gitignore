@@ -21,3 +21,6 @@ dashboard_pib/data/
 # Configuración local de herramientas
 .claude/settings.local.json
 .streamlit/secrets.toml
+
+# Skills locales (fuera del repositorio)
+.claude/skills/
