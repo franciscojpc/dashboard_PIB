@@ -6,6 +6,25 @@ Streamlit, Plotly, pandas, Matplotlib y Seaborn.
 
 **▶ App en línea:** <https://dashboardpib-ejwfmwktxnex4up2d2epgq.streamlit.app/>
 
+## Contexto académico
+
+Este repositorio es un **ejemplo de cómo usar skills de Claude Code** en la
+materia de **Programación** de la **ENES UNAM León**.
+
+El flujo trabajado fue:
+
+1. Instalar una skill para construir dashboards (`crear-dashboard`) y aplicarla
+   a los tabulados del PIB del INEGI.
+2. Refactorizar el resultado con una skill de disciplina de ingeniería
+   (`ub-mode`, de [unclebob/ub-mode](https://github.com/unclebob/ub-mode)):
+   pruebas primero, módulos con una sola responsabilidad y verificación del
+   comportamiento.
+3. Publicar el tablero y este repositorio como referencia.
+
+Las skills viven en la configuración local de cada entorno (`.claude/skills/`)
+y no se versionan aquí: el repositorio muestra el código y los datos con los
+que se trabajó.
+
 ## Instalación
 
 Desde la raíz del repositorio:
