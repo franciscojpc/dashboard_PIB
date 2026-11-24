@@ -217,6 +217,8 @@ header[data-testid="stHeader"] {{ background: transparent; }}
   content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%;
   background: {POS}; margin-right: 6px; vertical-align: 1px;
 }}
+.chip.link {{ text-decoration: none; color: #9FB2CA; }}
+.chip.link:hover {{ border-color: {ACCENT}; color: #E9F7FF; }}
 
 /* ---------- KPI cards ---------- */
 .kpi {{

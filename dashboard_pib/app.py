@@ -27,6 +27,8 @@ st.set_page_config(
 theme.inject_css()
 theme.mpl_style()
 
+REPO_URL = "https://github.com/franciscojpc/dashboard_PIB"
+
 with st.sidebar:
     st.markdown(
         f"""
@@ -89,6 +91,9 @@ st.markdown(
         <span class="chip">Base 2018 = 100</span>
         <span class="chip">1993 – {model.ANIO_MAX} · serie larga 1980 – {model.ANIO_MAX}</span>
         <span class="chip">Fuente: INEGI</span>
+        <a class="chip link" href="{REPO_URL}" target="_blank" rel="noopener">
+          Código en GitHub ↗
+        </a>
       </div>
     </div>
     """,

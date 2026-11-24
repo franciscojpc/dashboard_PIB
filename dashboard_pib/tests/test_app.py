@@ -29,6 +29,7 @@ def test_render_inicial() -> None:
     assert len(at.tabs) == 5
     assert "Producto Interno Bruto de México" in _markdown(at)
     assert "PIB real · último trimestre" in _markdown(at)
+    assert "https://github.com/franciscojpc/dashboard_PIB" in _markdown(at)
     assert len(at.selectbox[0].options) == 184
     assert len(at.selectbox[1].options) == 10
     assert len(at.get("download_button")) == 1
