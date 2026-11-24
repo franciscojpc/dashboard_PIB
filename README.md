@@ -21,9 +21,9 @@ El flujo trabajado fue:
    comportamiento.
 3. Publicar el tablero y este repositorio como referencia.
 
-Las skills viven en la configuración local de cada entorno (`.claude/skills/`)
-y no se versionan aquí: el repositorio muestra el código y los datos con los
-que se trabajó.
+Las skills utilizadas se incluyen en `.claude/skills/`: `crear-dashboard`
+(guía para construir el tablero) y `ub-mode` (con su licencia MIT). Claude Code
+las carga automáticamente al abrir el proyecto.
 
 ## Instalación
 
@@ -100,6 +100,10 @@ Notas:
 .
 ├── README.md
 ├── .gitignore
+├── .claude/
+│   └── skills/
+│       ├── crear-dashboard/SKILL.md
+│       └── ub-mode/            # SKILL.md, README.md, LICENSE (MIT)
 ├── dashboard_pib/
 │   ├── app.py              # entrada: configuración, filtros y pestañas
 │   ├── model.py            # dominio: catálogo, series, periodos, estadísticos
