@@ -4,6 +4,15 @@ Dashboard interactivo del **Producto Interno Bruto trimestral de México**
 (INEGI, Sistema de Cuentas Nacionales, año base 2018), construido con
 Streamlit, Plotly, pandas, Matplotlib y Seaborn.
 
+## Instalación
+
+Desde la raíz del repositorio:
+
+```bash
+python3 -m venv .venv
+.venv/bin/pip install -r dashboard_pib/requirements.txt
+```
+
 ## Ejecutar
 
 ```bash
@@ -11,18 +20,22 @@ cd dashboard_pib
 ../.venv/bin/streamlit run app.py
 ```
 
-Abre <http://localhost:8501>. El entorno `.venv` ya incluye todas las
-dependencias (`requirements.txt`).
+Abre <http://localhost:8501>.
 
-Para regenerar la caché de datos a partir de los Excel:
+La primera ejecución genera `dashboard_pib/data/pib.parquet` a partir de los
+Excel de `tabulados_PIBT/` (unos segundos); después se reutiliza la caché.
+
+Para regenerar la caché a partir de los tabulados:
 
 ```bash
+cd dashboard_pib
 ../.venv/bin/python build_data.py --force
 ```
 
 Pruebas (modelo, formato, gráficas y app completa vía `AppTest`):
 
 ```bash
+cd dashboard_pib
 ../.venv/bin/python -m pytest
 ```
 
@@ -41,7 +54,7 @@ Filtros globales en la barra lateral: rango de años, periodicidad
 
 ## Fuente de datos
 
-`../tabulados_PIBT/` contiene cinco tabulados de INEGI:
+`tabulados_PIBT/` contiene cinco tabulados de INEGI:
 
 | Archivo | Contenido |
 |---|---|
@@ -60,29 +73,30 @@ Notas:
 - La estructura porcentual y las contribuciones provienen de los tabulados
   originales de INEGI; la suma de parciales puede diferir por redondeo.
 
-## Estructura del proyecto
+## Estructura del repositorio
 
 ```
-dashboard_pib/
-├── app.py              # entrada: configuración, filtros y despacho de pestañas
-├── model.py            # dominio: catálogo, series, periodos, estadísticos
-├── charts.py           # constructores de figuras (Plotly / Matplotlib)
-├── components.py       # KPI, secciones y envoltorios de Streamlit
-├── formatting.py       # formato numérico (mdp, %, pp, índices)
-├── theme.py            # paleta, CSS, plantilla Plotly y estilo Matplotlib
-├── pib_data.py         # ingesta de los Excel → tabla larga + parquet
-├── build_data.py       # regeneración de la caché
-├── views/              # una pestaña por archivo
-│   ├── resumen.py
-│   ├── indicadores.py
-│   ├── comparar.py
-│   ├── sectores.py
-│   └── datos.py
-├── tests/              # pruebas de comportamiento (pytest + AppTest)
-├── data/pib.parquet    # caché generada (431 mil registros)
-├── data/meta.json      # metadatos de la última generación
-└── .streamlit/config.toml
+.
+├── README.md
+├── .gitignore
+├── dashboard_pib/
+│   ├── app.py              # entrada: configuración, filtros y pestañas
+│   ├── model.py            # dominio: catálogo, series, periodos, estadísticos
+│   ├── charts.py           # constructores de figuras (Plotly / Matplotlib)
+│   ├── components.py       # KPI, secciones y envoltorios de Streamlit
+│   ├── formatting.py       # formato numérico (mdp, %, pp, índices)
+│   ├── theme.py            # paleta, CSS, plantilla Plotly y Matplotlib
+│   ├── pib_data.py         # ingesta de los Excel → tabla larga + parquet
+│   ├── build_data.py       # regeneración de la caché
+│   ├── views/              # una pestaña por archivo
+│   ├── tests/              # pruebas de comportamiento (pytest + AppTest)
+│   ├── requirements.txt
+│   ├── requirements-dev.txt
+│   └── .streamlit/config.toml
+└── tabulados_PIBT/         # tabulados fuente de INEGI
 ```
+
+`dashboard_pib/data/` se genera al ejecutar la app y no se versiona.
 
 ## Arquitectura
 
